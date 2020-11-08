@@ -21,7 +21,7 @@ def get_longest_common_subsequence(text1, text2):
     subsequence = ""
     i, j = largest_sequence_endpoint
     if largest:
-        while (count_map[(i, j)] != 0):
+        while count_map[(i, j)] != 0:
             path = (i - 1, j) if (count_map[(i - 1, j)]) >= count_map[(i, j - 1)] else (i, j - 1)
             if count_map[path] != count_map[i, j]:
                 subsequence = text1[i - 1] + subsequence
